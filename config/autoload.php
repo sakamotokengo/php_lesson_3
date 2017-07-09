@@ -5,7 +5,7 @@
     {
       $className = substr($class, strlen($prefix));
       $classFilePath = __DIR__ . '/../lib/' .str_replace('\\', '/', $className) . '.php';
-      if(file_exsit($classFilePath))
+      if(file_exists($classFilePath))
       {
         require $classFilePath;
       }
