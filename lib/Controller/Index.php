@@ -11,6 +11,8 @@
       header('Location:' . SITE_URL . 'login.php');
       exit;
       }
+      $userModel = new \Kids\Model\User();
+    $this->setValues('users', $userModel->findAll());
     }
 
   }

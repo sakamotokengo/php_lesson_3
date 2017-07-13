@@ -22,7 +22,7 @@
     <h1>新規登録</h1>
     <form action="" method="post">
       <p>
-        <input type="text" name="email" placeholder="email">
+        <input type="text" name="email" placeholder="email" >
       </p>
       <p>
         <?php echo h($app -> getErrors('email')); ?>
