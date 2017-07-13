@@ -22,6 +22,11 @@
   ]);
   $stmt->setFetchMode(\PDO::FETCH_CLASS, 'stdClass');
   $user = $stmt->fetch();
+  public function findAll() {
+    $stmt = $this->db->query("select * from users order by id");
+    $stmt->setFetchMode(\PDO::FETCH_CLASS, 'stdClass');
+    return $stmt->fetchAll();
+  }
 
   if (empty($user)) {
     throw new \Kids\Exception\UnmatchEmailOrPassword();

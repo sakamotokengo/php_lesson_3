@@ -9,7 +9,7 @@
     exit;
     }
 
-    $_SESION = [];
+    $_SESSION = [];
 
     if (isset($_COOKIE[session_name()])) {
     setcookie(session_name(), '', time() - 86400, '/');

@@ -7,6 +7,9 @@ $app = new Kids\Controller\Index();
 
 $app->run();
 
+// $app->login()
+// $app->getValues()->users
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,8 +31,8 @@ $app->run();
     <h1>Users <span class="fs12">(<?= count($app->getValues()->users); ?>)</span></h1>
     <ul>
       <?php foreach ($app->getValues()->users as $user) : ?>
-             <li><?= h($user->email); ?></li>
-           <?php endforeach; ?>
+       <li><?= h($user->email); ?></li>
+     <?php endforeach; ?>
     </ul>
   </div>
 </body>
