@@ -1,12 +1,8 @@
 <? php
 require_once(__DIR__ . '/../config/config.php');
-// var_dump($_SESSION['me']);
-//  $app = new Kids\Controller\Login();
-  //  $app -> run
-  //  echo 'まだログインしてないよ！';
-  //  exit;
 
-
+$app = new Kids\Controller\Login();
+$app ->run();
 
  ?>
  <!DOCTYPE html>
@@ -23,17 +19,18 @@ require_once(__DIR__ . '/../config/config.php');
      <body>
      <div class="wrapper">
      <h1>ログイン</h1>
-     <form action="" method="post" id="login">
+     <form action="" method="post">
          <p>
-<input type="text" name="email" placeholder="email" value="<?= isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>">        </p>
+           <input type="text" name="email" placeholder="email" value="<?= isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>">
+         </p>
         <p>
         <input type="password" name="password" placeholder="password">
          </p>
-         <p class="err"><?= h($app->getErrors('login')); ?></p>
-  <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
+         <p><?= h($app->getErrors('login')); ?></p>
+         <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
          <input type="submit" value="Log In">
      </form>
-     <p><a href="./siginup.php">Sign Up</a></p>
+     <p><a href="./signup.php">Sign Up</a></p>
      </div>
    </body>
  </html>

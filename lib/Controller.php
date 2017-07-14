@@ -4,6 +4,7 @@
   class Controller
   {
     private $_errors;
+    private $_values;
 
     public function __construct()
     {
@@ -12,6 +13,11 @@
         $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
       }
       $this -> _errors = new \stdClass();
+      $this -> _errors = new \stdClass();
+    }
+
+    protected function setValues(){
+      return $this->_values;
     }
 
     protected function setErrors($key, $error)

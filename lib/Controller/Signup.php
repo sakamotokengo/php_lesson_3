@@ -29,7 +29,7 @@
       } catch (\Kids\Exception\InvalidPassword $e){
         // echo $e -> getMessage();
         // exit;
-        $this -> setErrors('email', $e -> getMessage());
+        $this -> setErrors('password', $e -> getMessage());
       }
       if($this -> hasError())
       {
@@ -58,12 +58,6 @@
     }
     private function _validate()
     {
-      if(!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token'])
-      {
-        echo 'トークンが間違っています';
-        exit;
-      }
-
       if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
       {
         throw new \Kids\Exception\InvalidEmail();
@@ -72,6 +66,11 @@
       if (!preg_match('/\A[a-zA-Z0-9]+\z/', $_POST['password']))
       {
         throw new \Kids\Exception\InvalidPassword();
+      }
+      if(!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token'])
+      {
+        echo 'トークンが間違っています';
+        exit;
       }
     }
   }

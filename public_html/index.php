@@ -7,9 +7,6 @@ $app = new Kids\Controller\Index();
 
 $app->run();
 
-// $app->login()
-// $app->getValues()->users
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">

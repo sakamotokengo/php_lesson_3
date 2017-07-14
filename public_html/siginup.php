@@ -22,20 +22,20 @@
     <h1>新規登録</h1>
     <form action="" method="post">
       <p>
-        <input type="text" name="email" placeholder="email" >
+        <input type="text" name="email" placeholder="email" value="<?= isset($app->getValues()->email) ? h($app->getValues()->email): ''; ?>">
       </p>
-      <p>
-        <?php echo h($app -> getErrors('email')); ?>
+      <p class="err">
+        <?= h($app -> getErrors('email')); ?>
       </p>
       <p>
         <input type="password" name="password" placeholder="password">
       </p>
-      <p>
-        <?php echo h($app -> getErrors('password')); ?>
+      <p class="err">
+        <?= h($app -> getErrors('password')); ?>
       </p>
         <input type="submit" value="Sign Up">
-        <input type="hidden" name="token" value="<?php echo h($_SESSION['token']);?>">
-      <p><a href="./login.php">Log In</a></p>
+        <input type="hidden" name="token" value="<?= h($_SESSION['token']);?>">
+      <p class="fs12"><a href="./login.php">Log In</a></p>
     </form>
     </div>
   </body>
