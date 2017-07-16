@@ -6,7 +6,7 @@
   define('DATABASE_HOST', 'localhost');
   define('PDO_DSN','mysql:dbname=' . DATABASE_NAME .';host=' . DATABASE_HOST . '; charset=utf8');
 
-  define('SITE_URL', 'http://192.168.56.1/php_lesson_3/public_html/');
+  define('SITE_URL', 'http://192.168.9.34/php_lesson_3/public_html/');
 
   require_once('../lib/function.php');
   require_once('autoload.php');

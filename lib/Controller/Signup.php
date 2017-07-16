@@ -40,7 +40,7 @@
         // create user
         try{
           $userModel = new \Kids\Model\User();
-          $userModel -> createUser([
+          $userModel -> create([
             'email' => $_POST['email'],
             'password' => $_POST['password']
           ]);

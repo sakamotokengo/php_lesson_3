@@ -21,7 +21,7 @@ $app->run();
 </head>
 <body>
   <div class="wrapper">
-    <form action="logout.php" method="post" id="logout">
+    <form action="./logout.php" method="post" id="logout">
       <?= h($app->me()->email); ?><input type="submit" value="Log Out">
       <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
     </form>
